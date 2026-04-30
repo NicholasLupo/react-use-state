@@ -6,36 +6,34 @@ export default function CardComponent() {
     const btn_primary = 'btn btn-primary'
     const btn_warning = 'btn btn-warning'
 
-    const [isActive, isStateActive] = useState(null)
+    const [activeIds, setActiveIds] = useState([])
 
     function toggleText(id) {
 
-        if (isActive === id) {
+        setActiveIds((current) => {
 
-            return isStateActive(null)
+            if (current.includes(id)) {
+                return current.filter((activeId) => activeId !== id)
+            }
 
-        }
+            return [...current, id]
 
-        isStateActive(id)
-
+        })
     }
 
     return (
-
         <div className="container">
             {
                 languages.map((item) => {
-
-                    const btnClass = item.id === isActive ? btn_warning : btn_primary
+                    const isOpen = activeIds.includes(item.id)
+                    const btnClass = isOpen ? btn_warning : btn_primary
 
                     return (
                         <div className="card p-3 mb-3" key={item.id}>
                             <button onClick={() => toggleText(item.id)} className={btnClass}>{item.title}</button>
                             {
-                                isActive === item.id && (
-
+                                isOpen && (
                                     <p>{item.description}</p>
-
                                 )
                             }
                         </div>
