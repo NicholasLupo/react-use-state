@@ -21,11 +21,12 @@ export default function CardComponent() {
     }
 
     return (
+
         <div className="container">
             {
                 languages.map((item) => {
 
-                    const btnClass = item.id % 2 === 0 ? btn_warning : btn_primary
+                    const btnClass = item.id === isActive ? btn_warning : btn_primary
 
                     return (
                         <div className="card p-3 mb-3" key={item.id}>
