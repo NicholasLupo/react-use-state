@@ -5,3 +5,20 @@
   box-sizing: border-box;
 
 }
+
+body {
+
+  font-family: 'Open Sans Variable', sans-serif;
+
+  header {
+
+    background-color: aliceblue;
+
+    h1 {
+
+      padding: 0.5rem;
+
+    }
+
+  }
+}
