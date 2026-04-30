@@ -1,9 +1,13 @@
+import CardComponent from "./CardComponent";
+
 export default function AppMain() {
 
 
     return (
 
-        <main></main>
+        <main>
+            <CardComponent />
+        </main>
 
     )
 }

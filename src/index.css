@@ -23,4 +23,15 @@ body {
     }
 
   }
+
+  main {
+
+    button {
+
+      width: 10%;
+      margin: 1rem 0;
+
+    }
+
+  }
 }
